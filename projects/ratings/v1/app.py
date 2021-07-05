@@ -5,13 +5,13 @@ import config, loader
 
 app = Flask(__name__)
 
-@app.route("/{}/ratings".format(config.VERSION), methods=["GET"])
+@app.route("/ratings", methods=["GET"])
 def ratings():
     data_loader = loader.Loader()
     data = data_loader.load()
     return json.dumps(data)
 
-@app.route("/{}/ratings/<path:book_id>".format(config.VERSION), methods=["GET"])
+@app.route("/ratings/<path:book_id>", methods=["GET"])
 def rating_one(book_id):
     data_loader = loader.Loader()
     data = data_loader.load()
