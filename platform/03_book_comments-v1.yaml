@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: comments
+  labels:
+    app: comments
+    service: comments
+spec:
+  ports:
+  - port: 5000
+    name: http
+  selector:
+    app: comments
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bookinfo-comments
+  labels:
+    account: comments
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: comments-v1
+  labels:
+    app: comments
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: comments
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: comments
+        version: v1
+    spec:
+      serviceAccountName: bookinfo-comments
+      containers:
+      - name: comments
+        image: docker.io/anichikage/book-comments-v1:0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        securityContext:
+          runAsUser: 1000
