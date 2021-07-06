@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-page
+  labels:
+    app: front-page
+    service: front-page
+spec:
+  ports:
+  - port: 5000
+    name: http
+  selector:
+    app: front-page
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bookinfo-front-page
+  labels:
+    account: front-page
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-page-v1
+  labels:
+    app: front-page
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-page
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: front-page
+        version: v1
+    spec:
+      serviceAccountName: bookinfo-front-page
+      containers:
+      - name: front-page
+        image: docker.io/anichikage/book-front-page:0.2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        securityContext:
+          runAsUser: 1000
