@@ -1,4 +1,4 @@
-# istio-systems
+# istio-examples
 
 ## Framework
 <img src="https://raw.githubusercontent.com/AniChikage/istio-examples/main/assets/book-info.png" width = "500" height = "300" alt="" align=center />
@@ -71,4 +71,7 @@ check if istio yaml is right
 istioctl validate -f <yaml file name>
 ``` 
 
-
+7. open kiali dashboard
+```
+istioctl dashboard kiali
+```
