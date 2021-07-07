@@ -1,6 +1,21 @@
 # istio-systems
 
-## Steps
+## Framework
+<img src="https://raw.githubusercontent.com/AniChikage/istio-examples/main/assets/book-info.png" width = "500" height = "300" alt="" align=center />
+
+## Introduction
+
+Service:
++ front-page: simple book info front page, calling details service
++ details: two versions
+  + v1: just calling ratings service
+  + v2: calling ratings and comments service
++ ratings: two versions
+  + v1: just "rating"
+  + v2: adding "people_number" field
++ comments: new feature in details-v2, user's comments for book
+
+## Setup
 
 1. download istio
 
@@ -12,30 +27,19 @@ mv bin/istioctl /usr/bin/
 
 2. install instio
 
-use demo configuration files
+use openshift configuration files
 ```
-istioctl install --set profile=demo -y
+istioctl install --set profile=openshift -y
 ```
 
 add namespace label
 ```
-oc label namespace istio-system istio-injection=enabled
+oc label namespace book-info istio-injection=enabled
 ```
 
 3. deploy app to your own namespace
 
 ```
-oc adm policy add-scc-to-group anyuid system:serviceaccounts:istio-system
+oc adm policy add-scc-to-group anyuid system:serviceaccounts:book-info
 ```
 
-4. install istio using openshift profile
-
-```
-istioctl install --set profile=openshift
-```
-
-5. after installation is complete, expose an OpenShift route for the ingress gateway
-
-```
-oc -n istio-system expose svc/istio-ingressgateway --port=http2
-```
