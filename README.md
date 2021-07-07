@@ -37,9 +37,38 @@ add namespace label
 oc label namespace book-info istio-injection=enabled
 ```
 
-3. deploy app to your own namespace
+3. new project
+```
+oc new-project book-info
+```
 
+4. deploy app to your own namespace
 ```
 oc adm policy add-scc-to-group anyuid system:serviceaccounts:book-info
 ```
+
+```
+cat <<EOF | oc -n book-info create -f -
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: istio-cni
+EOF
+```
+
+5. istio label namespace
+```
+oc label namespace book-info istio-injection=enabled
+```
+
+6. check if istio is correctly in namespace
+```
+istioctl analyze
+```
+
+check if istio yaml is right
+```
+istioctl validate -f <yaml file name>
+``` 
+
 
