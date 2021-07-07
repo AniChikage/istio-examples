@@ -1,0 +1,461 @@
+    1  sudo
+    2  ll
+    3  cd worksplace/
+    4  ll
+    5  sudo yum install vim -y
+    6  sudo yum install podman -y
+    7  podman
+    8  sudo podman 
+    9  sudo podman images
+   10  cat /etc/group | grep docker
+   11  sudo groupadd docker 
+   12  sudo usermod -aG docker anichikage
+   13  cat /etc/group
+   14  sudo systemctl restart podman
+   15  sudo chmod a+rw /var/run/docker.sock
+   16  sudo chmod a+rw /var/run/podman.sock
+   17  sudo ls /var/run/
+   18  sudo chmod a+rw /var/run/podman
+   19  podman
+   20  podman images
+   21  sudo podman images
+   22  ll
+   23  mkdir go
+   24  cd go/
+   25  ll
+   26  mkdir bookapi
+   27  cd bookapi/
+   28  ll
+   29  vim main.go
+   30  ll
+   31  vim Dockerfile
+   32  ll
+   33  sudo podman login docker.io
+   34  sudo podman build -t bookapi:0.1 .
+   35  sudo podman image
+   36  sudo podman images
+   37  sudo podman run -itd -p 8712:5000 -name="bookapi" 7ce37513ae11
+   38  sudo podman run -itd -p 8712:5000 --name="bookapi" 7ce37513ae11
+   39  sudo podman ps
+   40  sudo podman ps -a
+   41  sudo podman logs b97a91360cb0
+   42  vim Dockerfile 
+   43  sudo podman build -t bookapi:0.1t .
+   44  sudo podman run -itd -p 8712:5000 --name="bookapi" bookapi:0.1t
+   45  sudo podman run -itd -p 8712:5000 --name="bookapit" bookapi:0.1t
+   46  sudo podman ps -a
+   47  sudo podman rm bookapi
+   48  sudo podman images
+   49  sudo podman rmi 7ce37513ae11
+   50  sudo podman images
+   51  sudo podman ps -a
+   52  sudo podman exec -it 449080196e60 /bin/bash
+   53  vim Dockerfile 
+   54  ll
+   55  sudo podman ps -a
+   56  sudo podman rm -f 449080196e60
+   57  sudo podman images
+   58  sudo podman rmi c6ee2ba91f9b
+   59  sudo podman build -t bookapi:0.1 .
+   60  ll
+   61  l
+   62  ll
+   63  sudo podman run -itd -p 8712:5000 --name="bookapi" bookapi:0.1
+   64  sudo podman ps
+   65  sudo podman ps -a
+   66  sudo podman logs d3e67a713116
+   67  vim Dockerfile 
+   68  ll
+   69  l
+   70  ll
+   71  l
+   72  ll
+   73  l
+   74  ll
+   75  sudo podman images
+   76  sudo podman ps -a
+   77  sudo podman rm bookapi
+   78  sudo podman rmi 8acbcae79bd5
+   79  vim Dockerfile 
+   80  ll
+   81  sudo podman build -t bookapi:0.1t .
+   82  sudo podman run -itd -p 8712:5000 --name="bookapi" bookapi:0.1t
+   83  sudo podman exec -it bookapi /bin/bash
+   84  vim main.go 
+   85  ll
+   86  vim Dockerfile 
+   87  sudo podman build -t bookapi:0.1 .
+   88  sudo podman images
+   89  sudo podman run -itd -p 8712:5000 --name="bookap" bookapi:0.1
+   90  sudo podman run -itd -p 8713:5000 --name="bookap" bookapi:0.1
+   91  sudo podman ps -a
+   92  sudo podman rm 16ab47443827
+   93  sudo podman run -itd -p 8713:5000 --name="bookap" bookapi:0.1
+   94  sudo podman ps -a
+   95  ifconfig
+   96  sudo podman ps -a
+   97  sudo podman rm -f ac19de170814
+   98  sudo podman images
+   99  sudo podman rmi 87d9d28afa77
+  100  ll
+  101  sudo podman image
+  102  sudo podman images
+  103  cp main.go main-v2.go 
+  104  vim main-v2.go 
+  105  sudo podman build -t bookapi:0.2 .
+  106  sudo podman images
+  107  sudo podman rmi 2001d0a0d81a
+  108  sudo podman ps -a
+  109  sudo podman rmi 2001d0a0d81a
+  110  ll
+  111  cd ..
+  112  ll
+  113  cp -r bookapi bookapi-v2
+  114  cd bookapi
+  115  ll
+  116  rm main-v2.go 
+  117  ll
+  118  cd ..
+  119  cd bookapi-v2/
+  120  ll
+  121  rm main.go 
+  122  mv main-v2.go main.go
+  123  vim main.go 
+  124  vim Dockerfile 
+  125  ll
+  126  sudo podman build -t bookapi:0.2 .
+  127  sudo podman images
+  128  sudo podman run -itd -p 8714:5000 --name="bookapi-v2" bookapi:0.2
+  129  sudo podman ps -a
+  130  sudo
+  131  su
+  132  ll
+  133  sudo chmod 777 worksplace/
+  134  su
+  135  ll
+  136  cd /worksplace/
+  137  ll
+  138  cd go/
+  139  ll
+  140  lll
+  141  ll
+  142  mkdir animation
+  143  cd animation/
+  144  ll
+  145  cd cd /etc/sysconfig/network-scripts
+  146  cd /etc/sysconfig/network-scripts
+  147  ll
+  148  sudo vim ifcfg-eth0 
+  149  sudo systemctl restart network
+  150  sudo systemctl restart NetworkManager
+  151  ip addr
+  152  sudo reboot
+  153  cd ..
+  154  cd /home/
+  155  l
+  156  ll
+  157  cd anichikage/
+  158  ll
+  159  sudo yum install ssh -y
+  160  sudo yum install -y openssl openssh-server
+  161  sudo vim /etc/ssh/sshd_config
+  162  sudo systemctl start sshd.service
+  163  sudo systemctl enable sshd.service
+  164  ll
+  165  ls -la
+  166  pwd
+  167  cd ~
+  168  pwd
+  169  ls la
+  170  ls -la
+  171  tree
+  172  ssh-keygen -t rsa -C "hanzhis@cn.ibm.com"
+  173  ll
+  174  ls -la
+  175  cat .ssh/id_rsa.pub
+  176  l
+  177  ll
+  178  cd .ssh/
+  179  ll
+  180  vim authorized_keys
+  181  ll
+  182  ll -la
+  183  chmod 700 .ssh
+  184  ls -la
+  185  systemctl enable --now cockpit.socket
+  186  sudo systemctl enable --now cockpit.socket
+  187  chmod 644 .ssh/authorized_keys
+  188  firewall-cmd --query-port=666/tcp
+  189  sudo firewall-cmd --query-port=5000/tcp
+  190  systemctl status firewalld
+  191  sudo systemctl stop firewalld
+  192  systemctl status firewalld
+  193  oc project
+  194  oc login https://api.ocp-xo3xv-xx8ue.ibmdtepaks.com:6443 -u kubeadmin -p WDmpI-5BhWV-oGGtr-eRSiU
+  195  ping www.baidu.co
+  196  ping www.baidu.com
+  197  oc login https://api.ocp-xo3xv-xx8ue.ibmdtepaks.com:6443 -u kubeadmin -p WDmpI-5BhWV-oGGtr-eRSiU
+  198  sudo docker login docker.io
+  199  ll
+  200  cd istio/
+  201  ll
+  202  cd ..
+  203  ll
+  204  cd go/
+  205  ll
+  206  cd istio-examples/
+  207  ll
+  208  sudo docker images
+  209  sudo docker tag docker.io/anichikage/book-front-page:0.1 docker.io/anichikage/book-front-page:0.2
+  210  sudo docker images
+  211  sudo docker push docker.io/anichikage/book-front-page:0.2
+  212  oc get deployments
+  213  ll
+  214  cd projects/
+  215  ll
+  216  cd front-page/
+  217  ll
+  218  cd ..
+  219  ll
+  220  cd pla
+  221  cd ..
+  222  cd platform/
+  223  ll
+  224  oc apply -f 05_book-front-page-v1.yaml 
+  225  oc get pods
+  226  oc get routes --all-namespaces | grep regi
+  227  oc get routes --all-namespace | grep regi
+  228  oc get routes --all-namespaces | grep regi
+  229  oc get routes --all-namespaces
+  230  oc get pods
+  231  cd ..
+  232  ll
+  233  git add .
+  234  git commit -m "fix front-page ingore invalid header"
+  235  git push origin dev
+  236  git add .
+  237  git commit -m "fix potential security vulnerabilities package versin"
+  238  git push origin dev
+  239  ll
+  240  cd networking/
+  241  ll
+  242  oc apply -f 02-virtual-service-ratings-v2_100.yaml 
+  243  oc apply -f 04-virtual-service-details-v1_100.yaml 
+  244  oc apply -f 01-virtual-service-ratings-v1_100.yaml 
+  245  oc apply -f 04-virtual-service-details-v1_100.yaml 
+  246  oc apply -f 01-virtual-service-ratings-v1_100.yaml 
+  247  oc get pods
+  248  oc apply -f 01-virtual-service-ratings-v1.yaml 
+  249  oc apply -f 04-virtual-service-details-v1.yaml 
+  250  cd ..
+  251  git add .
+  252  git commit -m "add details istio yamls"
+  253  git push origin dev
+  254  oc apply -f 04-virtual-service-details-v1.yaml 
+  255  cd platform/
+  256  oc apply -f 04-virtual-service-details-v1.yaml 
+  257  ll
+  258  cd ..
+  259  cd networking/
+  260  ;;
+  261  oc apply -f 01-virtual-service-ratings-v1.yaml 
+  262  kubectl get virtualservices -o yaml
+  263  kubectl get destinationrules -o yaml
+  264  kubectl get virtualservice ratings -o yaml
+  265  ll
+  266  oc delete -f 00-virtual-service-ratings-v1_50-v2_50.yaml 
+  267  oc delete -f 01-virtual-service-ratings-v1.yaml 02-virtual-service-ratings-v2.yaml  03-virtual-service-details-v1_50-v2_50.yaml  04-virtual-service-details-v1.yaml  05-virtual-service-details-v2.yaml 
+  268  oc delete -f 01-virtual-service-ratings-v1.yaml 
+  269  oc delete -f 02-virtual-service-ratings-v2.yaml 
+  270  oc delete -f 03-virtual-service-details-v1_50-v2_50.yaml 
+  271  oc delete -f 04-virtual-service-details-v1.yaml 
+  272  oc delete -f 05-virtual-service-details-v2.yaml 
+  273  ll
+  274  oc apply -f 01-virtual-service-ratings-v1.yaml 
+  275  oc apply -f 04-virtual-service-details-v1.yaml 
+  276  cd istio/
+  277  ll
+  278  cd istio-1.10.2/
+  279  ll
+  280  ls -la
+  281  istioctl analyze
+  282  kubectl apply -f samples/addons
+  283  istioctl dashboard kiali
+  284  oc login https://api.ocp-xo3xv-xx8ue.ibmdtepaks.com:6443 -u kubeadmin -p WDmpI-5BhWV-oGGtr-eRSiU
+  285  ping www.baidu.com
+  286  oc login https://api.ocp-xo3xv-xx8ue.ibmdtepaks.com:6443 -u kubeadmin -p WDmpI-5BhWV-oGGtr-eRSiU
+  287  cd go/
+  288  ll
+  289  cd istio-examples/
+  290  ll
+  291  cd networking/
+  292  ll
+  293  oc apply -f 00-destination-rule-details.yaml 
+  294  oc get virtualservice
+  295  oc delete virtualservice details
+  296  oc delete virtualservice ratings
+  297  oc apply -f 00-destination-rule-details.yaml 
+  298  oc get svc
+  299  oc apply -f 00-destination-rule-details.yaml 
+  300  ping www.baidu.com
+  301  ll
+  302  oc apply -f 00-destination-rule-details.yaml
+  303  istioctl analyze 
+  304  ubectl label namespace istio-system istio-injection=enabled
+  305  kubectl label namespace istio-system istio-injection=enabled
+  306  oc apply -f 00-destination-rule-details.yaml
+  307  istioctl analyze 
+  308  kubectl get validatingwebhookconfiguration istiod-istio-system -o yaml
+  309  kubectl -n istio-system get pod -lapp=istiod
+  310  kubectl -n istio-system get endpoints istiod
+  311  oc apply -f 01-virtual-service-ratings-v1.yaml 
+  312  oc apply -f 04-virtual-service-details-v1.yaml 
+  313  oc apply -f 00-destination-rule-details.yaml
+  314  oc project
+  315  kubectl label namespace default istio-injection=enabled
+  316  kubectl get pods -n istio-system
+  317  k get svc -n istio-system
+  318  oc get svc -n istio-system
+  319  oc new-project book-info
+  320  kubectl label namespace book-info istio-injection=enabled
+  321  cd ..
+  322  ll
+  323  cd platform/
+  324  ll
+  325  oc apply -f 00_book-ratings-v1.yaml 
+  326  oc get pods
+  327  oc get deployments
+  328  oc describe deployments ratings-v1
+  329  oc get pods
+  330  oc login --token=sha256~d39Ir64ah4G6uYbw6A_4Zt0JKgOsBrbtzC5UxHAXkow --server=https://api.dteocp-550004eg3r-wlans.cp.fyre.ibm.com:6443
+  331  oc adm policy add-scc-to-group anyuid system:serviceaccounts:istio-system
+  332  istioctl install --set profile=openshift
+  333  kubectl get pods -n istio-system
+  334  kubectl describe pod istiod-74d4864d8d-l6zh2
+  335  kubectl describe pod istiod-74d4864d8d-l6zh2 -n istio-system
+  336  sudo docker login docker.io
+  337  istioctl install --set profile=openshift
+  338  oc login https://api.ocp-xo3xv-xx8ue.ibmdtepaks.com:6443 -u kubeadmin -p WDmpI-5BhWV-oGGtr-eRSiU
+  339  oc adm policy add-scc-to-group anyuid system:serviceaccounts:istio-system
+  340  istioctl install --set profile=openshift
+  341  oc -n istio-system expose svc/istio-ingressgateway --port=http2
+  342  oc new-project book-info
+  343  oc delete project book-info
+  344  oc new-project book-info
+  345  oc adm policy add-scc-to-group anyuid system:serviceaccounts:book-info
+  346  cat <<EOF | oc -n book-info create -f -
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: istio-cni
+EOF
+
+  347  kubectl label namespace book-info istio-injection=enabled
+  348  ll
+  349  oc apply -f 00_book-ratings-v1.yaml 
+  350  oc get pods
+  351  oc expose svc ratings
+  352  oc get routes
+  353  oc apply -f 01_book-ratings-v2.yaml 
+  354  oc get pods
+  355  oc apply -f 02_book-details-v1.yaml 
+  356  oc apply -f 03_book_comments-v1.yaml 
+  357  oc apply -f 04_book-details-v2.yaml 
+  358  oc apply -f 05_book-front-page-v1.yaml 
+  359  oc get pods
+  360  oc get svc
+  361  oc expose svc comments
+  362  oc expose svc details
+  363  oc expose svc front-page
+  364  oc get routes
+  365  oc get svc
+  366  oc describe svc ratings
+  367  istioctl analyze
+  368  export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+  369  export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].nodePort}')
+  370  echo $INGRESS_PORT
+  371  echo $SECURE_INGRESS_PORT
+  372  export INGRESS_HOST=$(minikube ip)
+  373  export INGRESS_HOST=$(oc ip)
+  374  export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+  375  export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
+  376  export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].port}')
+  377  echo $INGRESS_HOST=$
+  378  echo $INGRESS_HOST
+  379  echo $INGRESS_PORT
+  380  echo $SECURE_INGRESS_PORT
+  381  kubectl -n istio-system get service istio-ingressgateway
+  382  kubectl -n istio-system get service istio-ingressgateway -o
+  383  kubectl -n istio-system get service istio-ingressgateway -o jsonpath=
+  384  kubectl -n istio-system get service istio-ingressgateway -o jsonpath
+  385  kubectl -n istio-system get service istio-ingressgateway -o jsonpathkubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+  386  kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+  387  $ export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+  388  export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+  389  echo $INGRESS_HOST
+  390  echo $INGRESS_PORT
+  391  export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
+  392  echo $GATEWAY_URL
+  393  kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}'
+  394  cd ..
+  395  ll
+  396  cd networking/
+  397  ll
+  398  oc apply -f 00-destination-rule-details.yaml
+  399  kubectl get destinationrules -o yaml
+  400  oc get svc
+  401  istioctl 0analyze
+  402  istioctl analyze
+  403  oc apply -f 00-destination-rule-details.yaml -n book-info
+  404  istioctl validate -f 
+  405  istioctl validate -f 00-destination-rule-details.yaml 
+  406  oc apply -f 00-destination-rule-details.yaml
+  407  oc apply -f 04-virtual-service-details-v1.yaml 
+  408  oc apply -f 01-virtual-service-ratings-v1.yaml 
+  409  oc apply -f 02-virtual-service-ratings-v2.yaml 
+  410  oc apply -f 21-destination-rule-ratings.yaml 
+  411  oc apply -f 20-destination-rule-details.yaml 
+  412  oc apply -f 21-destination-rule-ratings.yaml 
+  413  oc apply -f 210 
+  414  oc apply -f 20-destination-rule-details.yaml 
+  415  oc apply -f 01-virtual-service-ratings-v1.yaml 
+  416  cd .
+  417  c ..
+  418  cd ..
+  419  ll
+  420  git add .
+  421  git commit -m "add destination rules"
+  422  git push origin dev
+  423  cd ..
+  424  ll
+  425  cd ..
+  426  ll
+  427  cd istio/
+  428  ll
+  429  ls -la
+  430  sudo rm -rf .git
+  431  cd ..
+  432  ll
+  433  cd go/
+  434  ll
+  435  cd istio-examples/
+  436  ll
+  437  cd networking/
+  438  cd ..
+  439  ll
+  440  cd networking/
+  441  l
+  442  ll
+  443  oc apply -f 00-virtual-service-ratings-v1_50-v2_50.yaml 
+  444  oc apply -f 03-virtual-service-details-v1_50-v2_50.yaml 
+  445  cd ..
+  446  ll
+  447  git add .
+  448  git commit -m "add framework"
+  449  git push origin dev
+  450  git add .
+  451  git commit -m "add framework"
+  452  git push origin master
+  453  git push origin dev
+  454  history
+  455  history >> his.txt
