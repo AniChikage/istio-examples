@@ -11,7 +11,7 @@ Service:
   + v1: just calling ratings service
   + v2: calling ratings and comments service
 + ratings: two versions
-  + v1: just "rating"
+  + v1: just "rating" field
   + v2: adding "people_number" field
 + comments: new feature in details-v2, user's comments for book
 
